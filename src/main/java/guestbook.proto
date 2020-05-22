@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package guestbook;
+
+option java_package = "com.guestbookfe.model";
+option java_outer_classname = "GuestProto";
+
+
+message Guest {
+	
+	string name=1;
+	
+	string institution=2;
+	
+	string email=3;
+	
+	string message=4;
+	
+}
+
+message Guests {
+	repeated Guest guest =1;
+}

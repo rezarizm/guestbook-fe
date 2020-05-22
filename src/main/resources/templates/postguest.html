@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/layout">
+<head>
+    <title>WELCOME !!!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    </head>
+<body>
+<div >
+
+    <div class="row"> 
+        <div class="col-md-6">
+            <div class="portlet light">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <span class="caption-subject bold uppercase">WELCOME!!!</span>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <form class="form-horizontal" action="#" th:action="@{/guestbook-fe/guestsign}" 
+                    	th:object="${form}"
+                          method="post">
+                        <div class="form-body">
+                            <div class="form-group" >
+                                <label class="control-label col-md-3">NAME
+                                 	<span class="required" aria-required="true"> *</span>
+                                </label>
+                                <div class="col-md-4" >
+                                	<input type="text" class="form-control" th:field="*{name}" id="name" 
+                                		></input>
+                                </div>
+                                <br><br>
+								<label class="control-label col-md-3" >INSTITUTION
+                                 	<span class="required" aria-required="true"> *</span>
+                                </label>
+                                <div class="col-md-4" >
+                                	<input type="text" class="form-control" th:field="*{institution}" id="institution" 
+                                		></input>
+                                </div>
+                                <br><br>
+								<label class="control-label col-md-3" >EMAIL
+                                 	<span class="required" aria-required="true"> *</span>
+                                </label>
+                                <div class="col-md-4" >
+                                	<input type="text" class="form-control" th:field="*{email}" id="email" 
+                                		></input>
+                                </div>
+                                <br><br>
+								<label class="control-label col-md-3" >MESSAGE
+                                 	<span class="required" aria-required="true"> *</span>
+                                </label>
+                                <div class="col-md-4" >
+                                	<input type="text" class="form-control" th:field="*{message}" id="message" 
+                                		></input>
+                                </div> 
+                                
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-4 col-md-8">	
+                                    <input class="btn btn-primary" type="submit" value="Submit"/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <br><br>
+                    <div class="row">
+                        <div class="col-md-offset-4 col-md-8">
+                        	<a href="/guestbook-fe/guestlist"><button>View Guest</button></a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

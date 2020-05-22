@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/layout">
+<head>
+<title>Attendant List</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+</head>
+<body>
+   <div class="row">
+	   <div class="col-md-10">
+	        <div class="portlet light">
+			<div class="protlet-body">
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Institution</th>
+						<th>Email</th>
+						<th>Message</th>
+					</tr>
+				</thead>
+				<tbody>
+	                   <tr th:each="guest : ${list}">
+	                       <td th:text="${guest.name}"></td>
+	                       <td th:text="${guest.institution}"></td>
+	                       <td th:text="${guest.email}"></td>
+	                       <td th:text="${guest.message}"></td>
+	                   </tr>
+	               </tbody>
+			</table>
+			</div>
+			<div class="row">
+                <div class="col-md-offset-3 col-md-9">
+                	<a href="/guestbook-fe/guestsign"><button>Sign in as A Guest</button></a>
+                </div>
+            </div>
+		</div>
+	</div>
+   </div>
+   </div>
+</body>
+
+</html>
